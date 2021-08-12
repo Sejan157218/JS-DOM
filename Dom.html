@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <main>
+        <section id="section">
+            <h2>My awesome blog</h2>
+            <article class="blog">
+                <h1 id='b1'>blog-1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae sunt officiis facilis voluptates reiciendis porro odit laudantium eveniet ratione sint omnis libero quidem assumenda quisquam dolorem consequatur, pariatur repellendus optio.</p>
+            </article>
+            <article class="blog">
+                <h1 id='b2'>blog-2</h1>
+                <p>Hic, quae distinctio incidunt soluta velit odio tempora obcaecati error. Voluptatem, eius quidem totam repellendus, iste distinctio laudantium vel praesentium repellat assumenda, quae numquam rem nihil ut iusto ea illo.</p>
+            </article>
+            <article class="blog">
+                <h1 class="hhhh" id='b3'>blog-3</h1>
+                <p>Ab iure cupiditate dolorem, explicabo aperiam quo, maiores deserunt soluta laborum quae dolore nihil obcaecati quia consequuntur facilis. Suscipit recusandae expedita veniam culpa sit esse illum libero fugit optio architecto?</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        console.log(document.body);
+        let blogTitle = document.getElementsByTagName('h1');
+            // console.log(blogTitle);
+        let blogArticle = document.getElementsByTagName('article');
+        for (let article of blogArticle){
+            // console.log(article.innerText)
+        }
+        let blog1H1 = document.getElementById('b1');
+        console.log(blog1H1);
+        blog1H1.style.backgroundColor = 'green';
+        blog1H1.innerText='awesome-blog-1';
+        blog1H1.style.color = 'white';
+        blog1H1.style.border = '2px solid red'
+        let blogs = document.getElementsByClassName('blog');
+        // console.log(blog);
+        // border margin padding deoa
+        // for (let blog of blogs){
+        // blog.style.border = '2px solid green';
+        // blog.style.borderRadius = '5px';
+        // blog.style.margin = '5px';
+        // blog.style.padding = '2px';
+        // };
+        let selector = document.querySelectorAll('.blog h1');
+        console.log(selector);
+        // getAttribute setAttribute
+        let attibute = document.getElementById('b3');
+        console.log(attibute);
+        attibute.getAttribute('id');
+        attibute.setAttribute('title','This is title');
+        attibute.parentNode;
+        attibute.parentNode.parentNode;
+        attibute.childNodes;
+
+        //create html tag
+        let article  = document.createElement('article');
+        article.classList.add('blog');
+        // let h2 = document.createElement('h2');
+        // h2.innerText = 'Blog-4'
+        // let p = document.createElement('p');
+        // p.innerText = 'Ab iure cupiditate dolorem, explicabo aperiam quo, maiores deserunt soluta laborum quae dolore nihil obcaecati quia consequuntur facilis. Suscipit recusandae expedita veniam culpa sit esse illum libero fugit optio architecto?';
+        // article.appendChild(h2);
+        // article.appendChild(p);
+        article.innerHTML = `
+        <h2>blog-4</h2>
+        <p>Ab iure cupiditate dolorem, explicabo aperiam quo, maiores deserunt soluta laborum quae dolore nihil obcaecati quia consequuntur facilis. Suscipit recusandae expedita veniam culpa sit esse illum libero fugit optio architecto?</p>
+        `
+        let section = document.getElementById('section');
+        section.appendChild(article)
+        for (let blog of blogs){
+        blog.style.border = '2px solid green';
+        blog.style.borderRadius = '5px';
+        blog.style.margin = '5px';
+        blog.style.padding = '2px';
+        };
+
+
+    </script>
+</body>
+</html>
